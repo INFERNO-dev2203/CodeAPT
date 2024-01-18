@@ -23,12 +23,12 @@ function loader(element) {
         if (element.textContent === '....') {
             element.textContent = '';
         }
-        //Ye kaam har 300 ms pr karna hai isliye setInterval ka use kiya hai.
+        //This will do above work every 300ms
     }, 300)
 }
 
 //TypeText Function - function to type the text one letter at a time
-// This is required qki client expect karega ki AI uske question ka reply kar rha hai.. aur hum nhi chahte ki api jo answer de wo ekdum se appear ho jaaye screen par
+// This is required because the client expects that AI will reply to his question, and we do not want the API to display the answer abruptly on the screen.
 function typeText(element, text) {
     let indexOfEachAnswerCharacter = 0;
 
@@ -118,17 +118,6 @@ const handleSubmit = async (e) => {
     loader(messageDiv);
 
     // fetching the data from server i.e bot is giving the response
-    // const response = await fetch('http://localhost:5000',{
-    //     method : 'POST',
-    //     headers:{
-    //         'Content-Type': 'application/json',
-    //         'Authorization': `Bearer $OPENAI_API_KEY`
-    //     },
-    //     body: JSON.stringify({
-    //         prompt: data.get('prompt')
-    //     })
-    // })
-
     const response = await axios.post('https://codeapt-appetite-for-code.onrender.com', {
         prompt: data.get('prompt')
     }, {
