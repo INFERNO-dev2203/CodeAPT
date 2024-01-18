@@ -98,6 +98,9 @@ const handleSubmit = async (e) => {
     // user's chatstripe 
     chatContainer.innerHTML += chatStripe(false, data.get('prompt'));
 
+    // After adding the user's chat stripe, hide the background
+    document.getElementById('background').style.display = 'none';
+
     // after getting the question reset the form 
     form.reset();
 
