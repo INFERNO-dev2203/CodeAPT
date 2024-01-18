@@ -129,7 +129,7 @@ const handleSubmit = async (e) => {
     //     })
     // })
 
-    const response = await axios.post('http://localhost:5000', {
+    const response = await axios.post('https://codeapt-appetite-for-code.onrender.com', {
         prompt: data.get('prompt')
     }, {
         headers: {
